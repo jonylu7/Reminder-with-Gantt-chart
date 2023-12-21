@@ -14,7 +14,7 @@ Date date;
 public:
     ReminderObject():date(),checked(false),description("None"){};
     ReminderObject(bool checked):checked(checked),date(),description("None"){};
-ReminderObject(int year,int month,int day):date(year,month,day){};
+ReminderObject(int year,int month,int day):date(year,month,day),checked(false),description("None"){};
 ~ReminderObject(){};
 
 bool getChecked(){return this->checked;};
