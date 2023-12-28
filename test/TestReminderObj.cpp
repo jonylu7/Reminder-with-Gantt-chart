@@ -11,7 +11,7 @@ TEST(TestReminderObject,TESTReminderObjectConstructWithEmptyArgsDateReturnDefaul
 }
 
 TEST(TestReminderObject,TESTReminderObjectConstructWithCheckedDateReturnDefault){
-    ReminderObject obj(true);
+    ReminderObject obj;
     ASSERT_EQ(obj.getChecked(),true);
     ASSERT_EQ(obj.getDay(),-1);
     ASSERT_EQ(obj.getDespcription(),"None");

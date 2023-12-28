@@ -8,18 +8,21 @@
 #include <Date.hpp>
 class ReminderObject:public Date{
 private:
+std::string name;
 bool checked;
 std::string description;
 Date date;
 public:
-    ReminderObject():date(),checked(false),description("None"){};
-    ReminderObject(bool checked):checked(checked),date(),description("None"){};
-ReminderObject(int year,int month,int day):date(year,month,day),checked(false),description("None"){};
+    ReminderObject(std::string name,bool checked,std::string descriptipn,Date date):name(name),checked(checked),description(descriptipn),Date(date){};
+    ReminderObject(): ReminderObject("default", false,"default descrption",Date()){};
 ~ReminderObject(){};
 
-bool getChecked(){return this->checked;};
-void setChecked(){this->checked=checked;};
-std::string getDespcription(){return this->description;};
+bool getChecked(){return this->checked;}
+void setChecked(){this->checked=checked;}
+std::string getNmae(){return this->name;}
+std::string getDespcription(){return this->description;}
+Date getDate(){return this->date;}
+
 
 
 };
