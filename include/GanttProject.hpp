@@ -10,10 +10,12 @@
 #include <vector>
 #include "DoubleLinkedList.hpp"
 #include "IsRemindable.hpp"
+#include "Color.hpp"
 
 class GanttProject : public IsRemindable {
 private:
     DoubleLinkedList<GanttObject> DLL;
+    color color;
 public:
     GanttProject() : DLL() {};
 
@@ -27,7 +29,7 @@ public:
         if (node.getValue().getChecked()) {
 
         }
-        return "PROGRESS";
+        return color.red + "[PROGRESS]" + color.end;
     }
 
     std::string getReminderObjectName() override {

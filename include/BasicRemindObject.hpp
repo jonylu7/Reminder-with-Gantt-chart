@@ -6,11 +6,13 @@
 #define OOP_BASICREMINDOBJECT_HPP
 
 #include "RemindObject.hpp"
+#include "Color.hpp"
 #include "IsRemindable.hpp"
 
 class BasicRemindObject : public IsRemindable {
 private:
     ReminderObject object;
+    color color;
 public:
     BasicRemindObject() : object() {};
 
@@ -24,9 +26,9 @@ public:
 
     std::string getReminderObjectCheckedStatus() override {
         if (object.getChecked() == true) {
-            return "DONE";
+            return color.blue + "[DONE]" + color.end;
         } else {
-            return "UNDONE";
+            return color.red + "[UNDONE]" + color.end;
         }
 
     };
