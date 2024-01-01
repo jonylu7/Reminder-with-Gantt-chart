@@ -19,7 +19,7 @@ public:
 
 bool getChecked(){return this->checked;}
 void setChecked(){this->checked=checked;}
-std::string getNmae(){return this->name;}
+std::string getName(){return this->name;}
 std::string getDespcription(){return this->description;}
 Date getDate(){return this->date;}
 

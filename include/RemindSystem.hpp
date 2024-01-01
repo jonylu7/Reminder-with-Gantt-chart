@@ -8,8 +8,8 @@
 #include <vector>
 #include <memory>
 #include "RemindObject.hpp"
-#include "GanttObject.hpp"
-
+#include "GanttProject.hpp"
+#include "IsRemindable.hpp"
 class ReminderSystem {
 private:
     std::vector<std::shared_ptr<ReminderObject>> reminderSys;
@@ -18,15 +18,18 @@ public:
 
     ~ReminderSystem() {};
 
-    void push_back(GanttObject obj) {
-        reminderSys.push_back(std::make_shared<GanttObject>(obj));
+    void push_back(GanttProject obj) {
+
     };
+
 
     std::shared_ptr<ReminderObject> pop_back() {
         std::shared_ptr<ReminderObject> result=reminderSys.back();
         reminderSys.pop_back();
         return result;
     };
+
+
 
 
 };

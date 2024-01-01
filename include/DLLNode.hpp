@@ -13,6 +13,8 @@ private:
     T value;
     std::shared_ptr<T> previous;
 public:
+    DLLNode(){
+    };
     DLLNode(T value){
         this->next= nullptr;
         this->previous= nullptr;
@@ -30,6 +32,10 @@ public:
 
     std::shared_ptr<T> getNext(){
         return this->next;
+    }
+
+    T operator=(T value){
+        return value;
     }
 
 

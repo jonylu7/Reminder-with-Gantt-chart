@@ -12,12 +12,10 @@ class DoubleLinkedList{
 private:
     DLLNode<T> tail;
     DLLNode<T> head;
+    DLLNode<T> now;
 public:
     DoubleLinkedList(){
-        this->head=new DLLNode<T>();
-        this->tail=new DLLNode<T>();
-        this->head->next=this->tail;
-        this->tail->previous=this->head;
+
     }
 
     DoubleLinkedList(std::vector<T> vec){
@@ -42,6 +40,10 @@ public:
 
     void merge(DoubleLinkedList<T> DLL){
 
+    }
+
+    DLLNode<T> getNow(){
+        return this->now;
     }
 
 

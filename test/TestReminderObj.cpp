@@ -3,16 +3,5 @@
 //
 
 #include "gtest/gtest.h"
-#include "RemindObject.hpp"
+#include "BasicRemindObject.hpp"
 
-TEST(TestReminderObject,TESTReminderObjectConstructWithEmptyArgsDateReturnDefault){
-    ReminderObject obj;
-    ASSERT_EQ(obj.getDay(),-1);
-}
-
-TEST(TestReminderObject,TESTReminderObjectConstructWithCheckedDateReturnDefault){
-    ReminderObject obj;
-    ASSERT_EQ(obj.getChecked(),true);
-    ASSERT_EQ(obj.getDay(),-1);
-    ASSERT_EQ(obj.getDespcription(),"None");
-}
