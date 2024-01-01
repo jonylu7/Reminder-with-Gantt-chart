@@ -21,14 +21,18 @@ public:
 
     ~GanttProject() {};
 
-    bool getReminderObjectChecked() override {
+    std::string getReminderObjectCheckedStatus() override {
+
         DLLNode node = DLL.getNow();
-        return node.getValue().getChecked();
+        if (node.getValue().getChecked()) {
+
+        }
+        return "";
     }
 
     std::string getReminderObjectName() override {
         DLLNode node = DLL.getNow();
-        return node.getValue().getName();
+        return "";
     }
 };
 

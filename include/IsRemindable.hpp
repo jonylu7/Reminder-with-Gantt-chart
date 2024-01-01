@@ -9,7 +9,7 @@ class IsRemindable {
 public:
     virtual std::string getReminderObjectName() = 0;
 
-    virtual bool getReminderObjectChecked() = 0;
+    virtual std::string getReminderObjectCheckedStatus() = 0;
 
 
 };

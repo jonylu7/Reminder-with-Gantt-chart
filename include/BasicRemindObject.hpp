@@ -8,12 +8,13 @@
 #include "RemindObject.hpp"
 #include "IsRemindable.hpp"
 
-class BasicRemindObject : public ReminderObject, public IsRemindable {
+class BasicRemindObject : public IsRemindable {
 private:
+    ReminderObject object;
 public:
-    BasicRemindObject() {};
+    BasicRemindObject() : object() {};
 
-    BasicRemindObject(ReminderObject rm) : ReminderObject(rm) {};
+    BasicRemindObject(ReminderObject rm) : object(rm) {};
 
     ~BasicRemindObject() {};
 
@@ -21,8 +22,13 @@ public:
         return "";
     }
 
-    bool getReminderObjectChecked() override {
-        return false;
+    std::string getReminderObjectCheckedStatus() override {
+        if (object.getChecked() == true) {
+            return "DONE";
+        } else {
+            return "UNDONE";
+        }
+
     };
 
 };

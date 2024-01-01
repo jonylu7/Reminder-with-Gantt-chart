@@ -7,50 +7,58 @@
 
 #include "DLLNode.hpp"
 #include <vector>
-template <typename T>
-class DoubleLinkedList{
+
+template<typename T>
+class DoubleLinkedList {
 private:
     DLLNode<T> tail;
     DLLNode<T> head;
     DLLNode<T> now;
 public:
-    DoubleLinkedList(){
+    DoubleLinkedList() {
 
     }
 
-    DoubleLinkedList(std::vector<T> vec){
+    DoubleLinkedList(std::vector<T> vec) {
     }
 
-    ~DoubleLinkedList(){}
+    ~DoubleLinkedList() {}
 
-    void push_back(T value){
-
-    }
-    void pop_back(){
+    void push_back(T value) {
 
     }
 
-    void remove(int index){
+    void pop_back() {
 
     }
 
-    void insert(T value,int index){
+    void remove(int index) {
 
     }
 
-    void merge(DoubleLinkedList<T> DLL){
+    void insert(T value, int index) {
 
     }
 
-    DLLNode<T> getNow(){
+    void merge(DoubleLinkedList<T> DLL) {
+
+    }
+
+    DLLNode<T> getNow() {
         return this->now;
     }
 
-
-    bool operator== (DoubleLinkedList<T> DLL){
-
+    DLLNode<T> getHead() {
+        return this->head;
     }
 
+    DLLNode<T> getTail() {
+        return this->tail;
+    }
+
+    bool operator==(DoubleLinkedList<T> DLL) {
+
+    }
 
 
 };
