@@ -7,7 +7,7 @@
 
 #include <vector>
 #include <memory>
-#include "RemindObject.hpp"
+#include "BasicRemindObject.hpp"
 #include "GanttProject.hpp"
 #include "IsRemindable.hpp"
 #include <iostream>
@@ -23,6 +23,20 @@ public:
     void push_back(std::shared_ptr<IsRemindable> obj) {
         reminderSys.push_back(obj);
     };
+
+    void push_back(GanttProject ganttProject) {
+        std::shared_ptr<IsRemindable> obj = std::make_shared<GanttProject>(ganttProject);
+        push_back(obj);
+    }
+
+    void push_back(BasicRemindObject bro) {
+        std::shared_ptr<IsRemindable> obj = std::make_shared<BasicRemindObject>(bro);
+        push_back(obj);
+    }
+
+    int size() {
+        return reminderSys.size();
+    }
 
 
     std::shared_ptr<IsRemindable> pop_back() {

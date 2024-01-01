@@ -27,12 +27,12 @@ public:
         if (node.getValue().getChecked()) {
 
         }
-        return "";
+        return "PROGRESS";
     }
 
     std::string getReminderObjectName() override {
         DLLNode node = DLL.getNow();
-        return "";
+        return node.getValue().getName();
     }
 };
 

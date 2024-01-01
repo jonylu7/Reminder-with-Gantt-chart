@@ -19,7 +19,7 @@ public:
     ~BasicRemindObject() {};
 
     std::string getReminderObjectName() override {
-        return "";
+        return object.getName();
     }
 
     std::string getReminderObjectCheckedStatus() override {
