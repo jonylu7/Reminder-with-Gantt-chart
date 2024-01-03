@@ -22,6 +22,10 @@ public:
     ~GanttObject() {};
 
     GanttObject &operator=(GanttObject ganttObject) {
+        this->setName(ganttObject.getName());
+        this->setChecked();
+        this->setDate(ganttObject.getcreatedDate());
+        this->setDescription(ganttObject.getDespcription());
         return *this;
     }
 

@@ -30,7 +30,7 @@ public:
 
     bool getChecked() { return this->checked; }
 
-    void setChecked() { this->checked = checked; }
+    void setChecked() { this->checked = true; }
 
     std::string getName() { return this->name; }
 
@@ -41,7 +41,7 @@ public:
     std::string setDescription(std::string description) { this->description = description; }
 
     Date getcreatedDate() { return this->createdDate; }
-    
+
 
     Date getdueDate() { return this->dueDate; }
 

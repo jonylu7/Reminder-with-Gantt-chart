@@ -36,7 +36,6 @@ public:
     void setChecked() override {
         object.setChecked();
     };
-
 };
 
 
