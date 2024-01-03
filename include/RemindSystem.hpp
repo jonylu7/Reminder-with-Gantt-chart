@@ -11,6 +11,7 @@
 #include "GanttProject.hpp"
 #include "IsRemindable.hpp"
 #include <iostream>
+#include <stdexcept>
 
 class ReminderSystem {
 private:
@@ -40,8 +41,11 @@ public:
 
     void checkedWithName(std::string name) {
         for (auto i: reminderSys) {
-
+            if (i->getReminderObjectName() == name) {
+                i->setChecked();
+            }
         }
+        throw std::invalid_argument("didn't find object with name");
     }
 
 

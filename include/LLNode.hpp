@@ -16,16 +16,19 @@ private:
     std::shared_ptr<T> next;
     T value;
 public:
+
     LLNode() {
     };
 
+    LLNode(T value, std::shared_ptr<T> next) : value(value), next(next) {};
+
     LLNode(T value) {
         this->next = nullptr;
-        this->previous = nullptr;
         this->value = value;
     };
 
     ~LLNode() {};
+
 
     T getValue() {
         return this->value;

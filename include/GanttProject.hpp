@@ -15,30 +15,33 @@
 
 class GanttProject : public IsRemindable {
 private:
-    LinkedList<GanttObject> DLL;
+    LinkedList<GanttObject> LL;
     color color;
 public:
-    GanttProject() : DLL() {};
+    GanttProject() : LL() {};
 
-    GanttProject(std::vector<GanttObject> ganttobject) : DLL(ganttobject) {};
+    GanttProject(std::vector<GanttObject> ganttobject) : LL(ganttobject) {};
 
     ~GanttProject() {};
 
     void setChecked() override {
-        LLNode<std::shared_ptr<GanttObject>> go = DLL.getNow();
+        LLNode<std::shared_ptr<GanttObject>> go = LL.getNow();
         go.getValue()->setChecked();
-        DLL.setNowtoNext();
+        LL.setNowtoNext();
     };
 
     std::string getReminderObjectCheckedStatus() override {
 //finsiehd, inprogress, undone
-        LLNode<std::shared_ptr<GanttObject>> nowObject = DLL.getNow();
-
-        return color.TextWithColorAndBraces("Progress", color.red);
+        LLNode<std::shared_ptr<GanttObject>> nowObject = LL.getNow();
+        return color.TextWithColorAndBraces("PROGRESS", color.red);
     }
 
     std::string getReminderObjectName() override {
-        return "";
+        //loop through
+        LLNode<std::shared_ptr<GanttObject>> head = this->LL.getHead();
+        LLNode<std::shared_ptr<GanttObject>> tail = this->LL.getTail();
+
+
     }
 };
 

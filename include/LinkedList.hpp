@@ -20,6 +20,14 @@ public:
     }
 
     LinkedList(std::vector<T> vec) {
+        LLNode<T> last = nullptr;
+        for (auto i: vec) {
+            LLNode<T> LLNow(vec);
+            if (last == nullptr) {
+                last = LLNow;
+            } else {
+            }
+        }
     }
 
     ~LinkedList() {}
@@ -56,11 +64,11 @@ public:
         }
     }
 
-    LLNode<T> getHead() {
+    LLNode<std::shared_ptr<T>> getHead() {
         return this->head;
     }
 
-    LLNode<T> getTail() {
+    LLNode<std::shared_ptr<T>> getTail() {
         return this->tail;
     }
 

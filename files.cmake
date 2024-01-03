@@ -6,8 +6,8 @@ set(INCLUDE_FILES
 )
 
 set(TEST_FILES
-TestDate.cpp
+        TestDate.cpp
         TestReminderObj.cpp
-        TestDoubleLL.cpp
+        TestLL.cpp
         TestReminderSys.cpp
 )
