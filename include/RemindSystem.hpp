@@ -38,6 +38,12 @@ public:
         return reminderSys.size();
     }
 
+    void checkedWithName(std::string name) {
+        for (auto i: reminderSys) {
+
+        }
+    }
+
 
     std::shared_ptr<IsRemindable> pop_back() {
         std::shared_ptr<IsRemindable> result = reminderSys.back();

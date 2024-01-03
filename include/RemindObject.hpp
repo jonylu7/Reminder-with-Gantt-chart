@@ -34,9 +34,14 @@ public:
 
     std::string getName() { return this->name; }
 
+    void setName(std::string name) { this->name = name; }
+
     std::string getDespcription() { return this->description; }
 
+    std::string setDescription(std::string description) { this->description = description; }
+
     Date getcreatedDate() { return this->createdDate; }
+    
 
     Date getdueDate() { return this->dueDate; }
 

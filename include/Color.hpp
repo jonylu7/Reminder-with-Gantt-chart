@@ -4,6 +4,7 @@
 
 #ifndef OOP_COLOR_HPP
 #define OOP_COLOR_HPP
+
 struct color {
 public:
     std::string red = "\033[1;31m";
@@ -11,6 +12,11 @@ public:
     std::string yello = "\033[1;33m";
     std::string end = "\033[0m";
 
+    std::string TextWithColorAndBraces(std::string text, std::string color) {
+        return "[" + color + text + end + "]";
+    }
+
 
 };
+
 #endif //OOP_COLOR_HPP

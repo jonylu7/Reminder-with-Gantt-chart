@@ -26,11 +26,15 @@ public:
 
     std::string getReminderObjectCheckedStatus() override {
         if (object.getChecked() == true) {
-            return color.blue + "[DONE]" + color.end;
+            return color.TextWithColorAndBraces("DONE", color.yello);
         } else {
-            return color.red + "[UNDONE]" + color.end;
+            return color.TextWithColorAndBraces("UNDONE", color.blue);
         }
 
+    };
+
+    void setChecked() override {
+        object.setChecked();
     };
 
 };

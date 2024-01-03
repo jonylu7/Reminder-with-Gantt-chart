@@ -11,6 +11,8 @@ public:
 
     virtual std::string getReminderObjectCheckedStatus() = 0;
 
+    virtual void setChecked() = 0;
+
 
 };
 
