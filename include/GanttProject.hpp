@@ -26,7 +26,7 @@ public:
 
     void setChecked() override {
         LLNode<std::shared_ptr<GanttObject>> go = LL.getNow();
-        go.getValue()->setChecked();
+        go.getValue();
         LL.setNowtoNext();
     };
 

@@ -8,7 +8,7 @@
 #include <string>
 #include <Date.hpp>
 
-class ReminderObject : public Date {
+class ReminderObject {
 private:
     std::string name;
     bool checked;

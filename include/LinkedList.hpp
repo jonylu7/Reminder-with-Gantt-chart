@@ -20,13 +20,9 @@ public:
     }
 
     LinkedList(std::vector<T> vec) {
-        LLNode<T> last = nullptr;
+        LLNode<T> last;
         for (auto i: vec) {
-            LLNode<T> LLNow(vec);
-            if (last == nullptr) {
-                last = LLNow;
-            } else {
-            }
+            LLNode<T> LLNow(i);
         }
     }
 

@@ -9,25 +9,17 @@
 #include <Date.hpp>
 #include <vector>
 
-class GanttObject : public ReminderObject {
+class GanttObject {
 private:
-
+    ReminderObject rm;
 public:
     GanttObject() {};
 
-    GanttObject(std::string name, bool checked, std::string description, Date date) : ReminderObject(name, checked,
-                                                                                                     description,
-                                                                                                     date) {};
+    GanttObject(std::string name, bool checked, std::string description, Date date) : rm(name, checked, description,
+                                                                                         date) {};
 
     ~GanttObject() {};
-
-    GanttObject &operator=(GanttObject ganttObject) {
-        this->setName(ganttObject.getName());
-        this->setChecked();
-        this->setDate(ganttObject.getcreatedDate());
-        this->setDescription(ganttObject.getDespcription());
-        return *this;
-    }
+    
 
 };
 
