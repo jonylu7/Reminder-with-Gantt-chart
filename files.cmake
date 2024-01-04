@@ -11,5 +11,6 @@ set(TEST_FILES
         TestDate.cpp
         TestReminderObj.cpp
         TestLL.cpp
-        TestReminderSys.cpp
+        TestReminderSys_BasicRemindObject.cpp
+        TestReminderSys_GanttProject.cpp
 )

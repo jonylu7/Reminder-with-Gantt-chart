@@ -13,7 +13,7 @@
 template<typename T>
 class LLNode {
 private:
-    std::shared_ptr<T> next;
+    T next;
     T value;
 public:
 
@@ -34,11 +34,11 @@ public:
         return this->value;
     }
 
-    std::shared_ptr<T> getPrevious() {
+    T getPrevious() {
         return this->previous;
     }
 
-    std::shared_ptr<T> getNext() {
+    T getNext() {
         return this->next;
     }
 

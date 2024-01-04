@@ -11,15 +11,17 @@
 
 class GanttObject {
 private:
-    ReminderObject rm;
+    ReminderObject Ro;
 public:
     GanttObject() {};
 
-    GanttObject(std::string name, bool checked, std::string description, Date date) : rm(name, checked, description,
+    GanttObject(ReminderObject rm) : Ro(rm) {};
+
+    GanttObject(std::string name, bool checked, std::string description, Date date) : Ro(name, checked, description,
                                                                                          date) {};
 
     ~GanttObject() {};
-    
+
 
 };
 

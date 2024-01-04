@@ -20,28 +20,19 @@ private:
 public:
     GanttProject() : LL() {};
 
-    GanttProject(std::vector<GanttObject> ganttobject) : LL(ganttobject) {};
+    GanttProject(std::vector<GanttObject> ganttVector) : LL(ganttVector) {};
 
     ~GanttProject() {};
 
     void setChecked() override {
-        LLNode<std::shared_ptr<GanttObject>> go = LL.getNow();
-        go.getValue();
-        LL.setNowtoNext();
     };
 
     std::string getReminderObjectCheckedStatus() override {
-//finsiehd, inprogress, undone
-        LLNode<std::shared_ptr<GanttObject>> nowObject = LL.getNow();
-        return color.TextWithColorAndBraces("PROGRESS", color.red);
+        return color.TextWithColorAndBraces("TEST", color.yello);
     }
 
     std::string getReminderObjectName() override {
-        //loop through
-        LLNode<std::shared_ptr<GanttObject>> head = this->LL.getHead();
-        LLNode<std::shared_ptr<GanttObject>> tail = this->LL.getTail();
-
-
+        return "test " + color.TextWithColorAndBraces("3 Remains", color.yello);
     }
 };
 
