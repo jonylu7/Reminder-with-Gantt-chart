@@ -13,14 +13,14 @@
 template<typename T>
 class LLNode {
 private:
-    T next;
+    std::shared_ptr<LLNode<T>> next;
     T value;
 public:
 
     LLNode() {
     };
 
-    LLNode(T value, std::shared_ptr<T> next) : value(value), next(next) {};
+    LLNode(T value, std::shared_ptr<LLNode<T>> next) : value(value), next(next) {};
 
     LLNode(T value) {
         this->next = nullptr;

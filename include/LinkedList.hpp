@@ -11,19 +11,22 @@
 template<typename T>
 class LinkedList {
 private:
-    LLNode<std::shared_ptr<T>> tail;
-    LLNode<std::shared_ptr<T>> head;
-    LLNode<std::shared_ptr<T>> now;
+    std::shared_ptr<LLNode<T>> head;
+    std::shared_ptr<LLNode<T>> now;
 public:
     LinkedList() {
 
+
+    }
+
+    LinkedList(T value) {
+        LLNode<T> node(value);
+        this->now = std::make_shared<LLNode<T>>(node);
+        this->head = std::make_shared<LLNode<T>>(node);
     }
 
     LinkedList(std::vector<T> vec) {
-        LLNode<T> last;
-        for (auto i: vec) {
-            LLNode<T> LLNow(i);
-        }
+        
     }
 
     ~LinkedList() {}
