@@ -24,14 +24,7 @@ public:
         return object.getName();
     }
 
-    std::string getReminderObjectCheckedStatus() override {
-        if (object.getChecked() == true) {
-            return color.TextWithColorAndBraces("DONE", color.yello);
-        } else {
-            return color.TextWithColorAndBraces("UNDONE", color.blue);
-        }
-
-    };
+    std::string getReminderObjectCheckedStatus() override;
 
     void setChecked() override {
         object.setChecked();

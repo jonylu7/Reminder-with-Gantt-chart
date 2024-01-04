@@ -1,8 +1,10 @@
 set(SRC_FILES
-
+        RemindSystem.cpp
+        BasicRemindObject.cpp
 )
 
 set(INCLUDE_FILES
+
 )
 
 set(TEST_FILES

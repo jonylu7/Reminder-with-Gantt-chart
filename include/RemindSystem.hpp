@@ -35,37 +35,18 @@ public:
         push_back(obj);
     }
 
+    std::shared_ptr<IsRemindable> pop_back();
+
     int size() {
         return reminderSys.size();
     }
 
-    void checkedWithName(std::string name) {
-        for (auto i: reminderSys) {
-            if (i->getReminderObjectName() == name) {
-                i->setChecked();
-            }
-        }
-        throw std::invalid_argument("didn't find object with name");
-    }
+    void checkedWithName(std::string name);
 
+    void removeWithName(std::string name);
 
-    std::shared_ptr<IsRemindable> pop_back() {
-        std::shared_ptr<IsRemindable> result = reminderSys.back();
-        reminderSys.pop_back();
-        return result;
-    };
+    void printAllRemindObject();
 
-
-    void printAllRemindObject() {
-        //print all object in vector
-        for (auto i: reminderSys) {
-            std::cout << i->getReminderObjectCheckedStatus() << " ";
-            std::cout << i->getReminderObjectName() << "\n";
-        }
-        std::cout << std::endl;
-
-
-    }
 
 };
 
