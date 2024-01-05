@@ -7,7 +7,6 @@
 
 #include "RemindObject.hpp"
 #include "LLNode.hpp"
-#include "GanttObject.hpp"
 #include <vector>
 #include "LinkedList.hpp"
 #include "IsRemindable.hpp"
@@ -15,12 +14,12 @@
 
 class GanttProject : public IsRemindable {
 private:
-    LinkedList<GanttObject> LL;
+    LinkedList<ReminderObject> LL;
     color color;
 public:
     GanttProject() : LL() {};
 
-    GanttProject(std::vector<GanttObject> ganttVector) : LL(ganttVector) {};
+    GanttProject(std::vector<ReminderObject> ganttVector) : LL(ganttVector) {};
 
     ~GanttProject() {};
 
@@ -33,7 +32,7 @@ public:
     }
 
     std::string getReminderObjectName() override {
-        return "test " + color.TextWithColorAndBraces("3 Remains", color.yello);
+        return "test " + color.TextWithColorAndBraces("3 Remainings", color.yello);
     }
 };
 

@@ -6,7 +6,6 @@
 #define OOP_LLNODE_HPP
 
 #include <memory>
-#include "GanttObject.hpp"
 #include <iostream>
 #include <vector>
 

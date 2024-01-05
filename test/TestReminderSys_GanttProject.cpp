@@ -4,7 +4,6 @@
 
 #include "RemindSystem.hpp"
 #include "GanttProject.hpp"
-#include "GanttObject.hpp"
 #include "gtest/gtest.h"
 #include "Date.hpp"
 #include <iostream>
@@ -13,12 +12,10 @@
 TEST(TestReminderSys_GanttProject, testPushAndPrint) {
     ReminderSystem rsys;
     Date someday(2024, 2, 3);
-    ReminderObject rm("RemindTest", false, "test", someday);
+    ReminderObject rm1("RemindTest", false, "test", someday);
+    ReminderObject rm2;
 
-    GanttObject go1(rm);
-    GanttObject go2;
-
-    std::vector<GanttObject> gvec({go1, go2});
+    std::vector<ReminderObject> gvec({rm1, rm2});
     GanttProject gpt(gvec);
     rsys.push_back(gpt);
     rsys.printAllRemindObject();

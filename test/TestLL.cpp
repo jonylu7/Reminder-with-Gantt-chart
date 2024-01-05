@@ -3,7 +3,6 @@
 //
 #include "gtest/gtest.h"
 #include "LLNode.hpp"
-#include "GanttObject.hpp"
 #include "BasicRemindObject.hpp"
 #include "RemindObject.hpp"
 #include "LinkedList.hpp"
