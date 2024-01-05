@@ -7,6 +7,7 @@
 
 #include "LLNode.hpp"
 #include <vector>
+#include <iostream>
 
 template<typename T>
 class LinkedList {
@@ -81,11 +82,6 @@ public:
     }
 
     bool operator==(LinkedList<T> DLL) {
-
-    }
-
-    void traverse() {
-        std::cout << this->now->getValue() << std::endl;
 
     }
 

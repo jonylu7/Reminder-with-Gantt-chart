@@ -26,6 +26,11 @@ public:
     void setChecked() override {
     };
 
+
+    void printAllLinkedList() {
+
+    }
+
     std::string getReminderObjectCheckedStatus() override {
 
         return color.TextWithColorAndBraces("TEST", color.yello);

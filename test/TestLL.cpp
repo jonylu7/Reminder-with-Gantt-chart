@@ -5,6 +5,7 @@
 #include "BasicRemindObject.hpp"
 #include "RemindObject.hpp"
 #include "LinkedList.hpp"
+#include "IsRemindable.hpp"
 
 
 TEST(TestLinkedList, TestCreateSingleObject) {
@@ -26,4 +27,6 @@ TEST(TestLinkedList, TestCreateVec) {
     ASSERT_EQ(linkedlist.getHead()->getValue().getReminderObjectName(), "test1");
     ASSERT_EQ(linkedlist.getHead()->getNext()->getValue().getReminderObjectName(), "test2");
 }
+
+
 
