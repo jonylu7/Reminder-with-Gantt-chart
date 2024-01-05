@@ -33,11 +33,12 @@ public:
         return this->value;
     }
 
-    T getPrevious() {
-        return this->previous;
+
+    void setNext(std::shared_ptr<LLNode<T>> next) {
+        this->next = next;
     }
 
-    T getNext() {
+    std::shared_ptr<LLNode<T>> getNext() {
         return this->next;
     }
 

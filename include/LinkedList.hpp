@@ -26,7 +26,20 @@ public:
     }
 
     LinkedList(std::vector<T> vec) {
-        
+        //vec with size==1
+        //vec with size==2+
+        std::shared_ptr<LLNode<T>> last;
+        for (int i = 0; i < vec.size(); i++) {
+            std::shared_ptr<LLNode<T>> node(std::make_shared<LLNode<T>>(vec[i]));
+            if (i == 0) {
+                this->head = node;
+                this->now = node;
+            } else {
+                last->setNext(node);
+            }
+            last = node;
+        }
+
     }
 
     ~LinkedList() {}
@@ -51,7 +64,7 @@ public:
 
     }
 
-    LLNode<std::shared_ptr<T>> getNow() {
+    std::shared_ptr<LLNode<T>> getNow() {
         return this->now;
     }
 
@@ -59,19 +72,20 @@ public:
         if (this->now == this->tail) {
             this->now = nullptr;
         } else {
-            this->now = this->now.getNext();
+            this->now = this->now->getNext();
         }
     }
 
-    LLNode<std::shared_ptr<T>> getHead() {
+    std::shared_ptr<LLNode<T>> getHead() {
         return this->head;
     }
 
-    LLNode<std::shared_ptr<T>> getTail() {
-        return this->tail;
+    bool operator==(LinkedList<T> DLL) {
+
     }
 
-    bool operator==(LinkedList<T> DLL) {
+    void traverse() {
+        std::cout << this->now->getValue() << std::endl;
 
     }
 
