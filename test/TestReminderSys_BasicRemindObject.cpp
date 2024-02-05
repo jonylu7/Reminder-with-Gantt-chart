@@ -1,7 +1,7 @@
 //
 // Created by 盧威任 on 1/1/24.
 //
-
+#include "ReadAndSave.hpp"
 #include "RemindSystem.hpp"
 #include "ReminderObjectList.hpp"
 #include "gtest/gtest.h"
@@ -50,6 +50,28 @@ TEST(TestReminderSys_BasicRemindObject, checkedWithNameSuccess) {
     rsys.checkedWithName("RemindTest");
     rsys.printAllRemindObject();
 }
+/**
+TEST(TestReminderSys_BasicRemindObject, savingAndReadingFile) {
+    ReminderSystem rsys;
+    Date someday(2024, 2, 3);
+    ReminderObject rm("RemindTest", false, "test", someday);
+    ReminderObjectList bro1(rm);
+    ReminderObjectList bro2(rm);
+
+    rsys.push_back(bro1);
+    rsys.push_back(bro2);
+
+    rsys.saveFile();
+    //rsys.loadFile();
+}
+
+TEST(TestReminderSys_BasicRemindObject, readingFile) {
+    ReminderSystem rsys;
+
+    rsys.loadFile();
+}
+**/
+
 /**
 TEST(TestReminderSys_BasicRemindObject, checkedWithNameFailed) {
 ReminderSystem rsys;

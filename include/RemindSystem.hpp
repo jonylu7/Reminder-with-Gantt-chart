@@ -11,9 +11,11 @@
 #include "IsRemindable.hpp"
 #include <iostream>
 #include <stdexcept>
+#include "ReadAndSave.hpp"
 
 class ReminderSystem {
 private:
+    File fileMethod;
     std::vector<std::shared_ptr<ReminderObjectList>> reminderSys;
 public:
     ReminderSystem() {};
@@ -37,6 +39,13 @@ public:
 
     void printAllRemindObject();
 
+    void saveFile() {
+        fileMethod.saveToFile(reminderSys, "ReminderSys.bin");
+    }
+
+    void loadFile() {
+        reminderSys = fileMethod.readFromFile("ReminderSys.bin");
+    }
 
 };
 
