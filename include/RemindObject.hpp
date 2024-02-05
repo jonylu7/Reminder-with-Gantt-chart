@@ -6,10 +6,13 @@
 #define OOP_REMINDOBJECT_HPP
 
 #include <string>
+#include "IsRemindable.hpp"
 #include <Date.hpp>
+#include "color.hpp"
 
-class ReminderObject {
+class ReminderObject : public IsRemindable {
 private:
+    color color;
     std::string name;
     bool checked;
     std::string description;
@@ -30,9 +33,17 @@ public:
 
     bool getChecked() { return this->checked; }
 
-    void setChecked() { this->checked = true; }
+    void setChecked() override { this->checked = true; }
 
-    std::string getName() { return this->name; }
+    std::string getReminderObjectName() override { return this->name; }
+
+    std::string getReminderObjectCheckedStatus() override {
+        if (this->getChecked() == true) {
+            return color.TextWithColorAndBraces("DONE", color.yello);
+        } else {
+            return color.TextWithColorAndBraces("UNDONE", color.blue);
+        }
+    };
 
     void setName(std::string name) { this->name = name; }
 

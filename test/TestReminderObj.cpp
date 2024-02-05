@@ -3,7 +3,7 @@
 //
 
 #include "gtest/gtest.h"
-#include "BasicRemindObject.hpp"
+#include "ReminderObjectList.hpp"
 
 
 

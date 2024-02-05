@@ -3,8 +3,7 @@
 //
 
 #include "RemindSystem.hpp"
-#include "GanttProject.hpp"
-#include "BasicRemindObject.hpp"
+#include "ReminderObjectList.hpp"
 #include "gtest/gtest.h"
 #include "Date.hpp"
 #include <iostream>
@@ -12,8 +11,8 @@
 
 TEST(TestReminderSys_BasicRemindObject, testPushAndPrint) {
     ReminderSystem rsys;
-    BasicRemindObject bro1;
-    BasicRemindObject bro2;
+    ReminderObjectList bro1;
+    ReminderObjectList bro2;
     rsys.push_back(bro1);
     rsys.push_back(bro2);
     rsys.printAllRemindObject();
@@ -21,8 +20,8 @@ TEST(TestReminderSys_BasicRemindObject, testPushAndPrint) {
 
 TEST(TestReminderSys_BasicRemindObject, testPopAndPrint) {
     ReminderSystem rsys;
-    BasicRemindObject bro1;
-    BasicRemindObject bro2;
+    ReminderObjectList bro1;
+    ReminderObjectList bro2;
     rsys.push_back(bro1);
     rsys.push_back(bro2);
     rsys.pop_back();
@@ -36,8 +35,8 @@ TEST(TestReminderSys_BasicRemindObject, checkedWithNameSuccess) {
     ReminderSystem rsys;
     Date someday(2024, 2, 3);
     ReminderObject rm("RemindTest", false, "test", someday);
-    BasicRemindObject bro1(rm);
-    BasicRemindObject bro2;
+    ReminderObjectList bro1(rm);
+    ReminderObjectList bro2;
 
     rsys.push_back(bro1);
     rsys.push_back(bro2);
@@ -50,8 +49,8 @@ TEST(TestReminderSys_BasicRemindObject, checkedWithNameFailed) {
     ReminderSystem rsys;
     Date someday(2024, 2, 3);
     ReminderObject rm("RemindTest", false, "test", someday);
-    BasicRemindObject bro1(rm);
-    BasicRemindObject bro2;
+    ReminderObjectList bro1(rm);
+    ReminderObjectList bro2;
 
     rsys.push_back(bro1);
     rsys.push_back(bro2);
@@ -62,8 +61,8 @@ TEST(TestReminderSys_BasicRemindObject, removedWithNameSuccess) {
     ReminderSystem rsys;
     Date someday(2024, 2, 3);
     ReminderObject rm("RemindTest", false, "test", someday);
-    BasicRemindObject bro1(rm);
-    BasicRemindObject bro2;
+    ReminderObjectList bro1(rm);
+    ReminderObjectList bro2;
 
     rsys.push_back(bro1);
     rsys.push_back(bro2);
@@ -76,8 +75,8 @@ TEST(TestReminderSys_BasicRemindObject, removedWithNameFailed) {
     ReminderSystem rsys;
     Date someday(2024, 2, 3);
     ReminderObject rm("RemindTest", false, "test", someday);
-    BasicRemindObject bro1(rm);
-    BasicRemindObject bro2;
+    ReminderObjectList bro1(rm);
+    ReminderObjectList bro2;
 
     rsys.push_back(bro1);
     rsys.push_back(bro2);
