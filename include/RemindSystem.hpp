@@ -22,7 +22,7 @@ public:
 
 
     void push_back(ReminderObjectList bro) {
-        push_back(bro);
+        reminderSys.push_back(std::make_shared<ReminderObjectList>(bro));
     }
 
     std::shared_ptr<ReminderObjectList> pop_back();

@@ -14,6 +14,7 @@
 class ReminderObjectList {
 private:
     color color;
+    std::string ListName;
     std::vector<std::shared_ptr<ReminderObject>> RList;
 public:
     ReminderObjectList() : RList() {};
@@ -34,6 +35,11 @@ public:
     std::shared_ptr<ReminderObject> getReminderListByName(std::string name);
 
     std::shared_ptr<ReminderObject> getReminderListByIndex(int index) { return RList[index]; };
+
+    std::string getName() { return this->ListName; };
+
+    void setName(std::string newName) { this->ListName = newName; };
+
 
 };
 
