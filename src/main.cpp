@@ -4,23 +4,39 @@
 
 #include "RemindSystem.hpp"
 #include "ReminderObjectList.hpp"
-
+#include <memory>
 #include "Date.hpp"
-
+#include <iostream>
 
 int main() {
     ReminderSystem rsys;
+    rsys.loadFile();
     Date someday(2024, 2, 3);
-    ReminderObject rm("RemindTest", false, "test", someday);
-    ReminderObjectList bro1(rm);
-    rm.setName("2");
-    ReminderObjectList bro2(rm);
+    while (true) {
+        rsys.printAllRemindObject();
+        std::string input;
+        std::cin >> input;
 
-    rsys.push_back(bro1);
-    rsys.push_back(bro2);
-
+        if (input == "1") {
+            std::string rmName;
+            std::cin >> rmName;
+            ReminderObject rm(rmName, false, "", someday);
+            std::cout << rm.getReminderObjectCheckedStatus() << rm.getReminderObjectName() << std::endl;
+            char index;
+            std::cin >> index;
+            rsys.printAllRemindObject();
+            rsys.getListbyIndex(int(index))->append(std::make_shared<ReminderObject>(rm));
+            rsys.printAllRemindObject();
+        } else if (input == "2") {
+            ReminderObjectList list;
+            std::string listName;
+            std::cin >> listName;
+            list.setName(listName);
+            rsys.push_back(list);
+        } else if (input == "3") {
+            break;
+        }
+    }
     rsys.saveFile();
-    ReminderSystem r2;
-    r2.loadFile();
-    r2.printAllRemindObject();
+    return 0;
 }

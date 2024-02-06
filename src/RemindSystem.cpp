@@ -4,12 +4,12 @@
 
 
 #include "RemindSystem.hpp"
-
+#include <iostream>
 
 void ReminderSystem::printAllRemindObject() {
     {
-        //print all object in vector
         for (auto i: this->reminderSys) {
+            std::cout << i->getName();
             i->printReminderList();
         }
         std::cout << "----------\n";

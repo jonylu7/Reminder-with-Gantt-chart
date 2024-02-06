@@ -44,7 +44,7 @@ public:
 
     std::string getName() { return this->ListName; };
 
-    void setName(std::string newName) { this->ListName = newName; };
+    void setName(std::string &newName) { this->ListName = newName; };
 
     void printReminderList();
 

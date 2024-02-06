@@ -48,6 +48,10 @@ public:
         reminderSys = fileMethod.readFromFile("ReminderSys.bin");
     }
 
+    std::shared_ptr<ReminderObjectList> getListbyIndex(int index) {
+        return reminderSys[index];
+    }
+
 };
 
 #endif //OOP_REMINDSYSTEM_HPP

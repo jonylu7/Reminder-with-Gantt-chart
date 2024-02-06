@@ -97,6 +97,18 @@ target_compile_options(ut_all PRIVATE
         ${TARGET_COMPILER_OPTIONS}
 )
 
+add_executable(Sample
+        ${SRC_FILES}
+        ${INCLUDE_FILES}
+        ${SRC_DIR}/main.cpp
+)
+target_include_directories(Sample PRIVATE
+        ${INCLUDE_DIR}
+)
+target_compile_options(Sample PRIVATE
+        ${TARGET_COMPILER_OPTIONS}
+)
+
 
 include(GoogleTest)
 gtest_discover_tests(ut_all)
