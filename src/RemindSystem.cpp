@@ -10,14 +10,11 @@ void ReminderSystem::printAllRemindObject() {
     {
         //print all object in vector
         for (auto i: this->reminderSys) {
-            for (int j = 0; j < i->getReminderListSize(); j++) {
-                std::cout << i->getReminderListByIndex(j)->getReminderObjectCheckedStatus() << " ";
-                std::cout << i->getReminderListByIndex(j)->getReminderObjectName() << "\n";
-            }
-            std::cout << "----------\n";
+            i->printReminderList();
         }
-        std::cout << std::endl;
+        std::cout << "----------\n";
     }
+    std::cout << std::endl;
 }
 
 

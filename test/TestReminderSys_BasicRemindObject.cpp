@@ -50,27 +50,59 @@ TEST(TestReminderSys_BasicRemindObject, checkedWithNameSuccess) {
     rsys.checkedWithName("RemindTest");
     rsys.printAllRemindObject();
 }
-/**
-TEST(TestReminderSys_BasicRemindObject, savingAndReadingFile) {
+
+TEST(TestReminderSys_BasicRemindObject, ListWithMultipleObject) {
     ReminderSystem rsys;
     Date someday(2024, 2, 3);
     ReminderObject rm("RemindTest", false, "test", someday);
     ReminderObjectList bro1(rm);
+    ReminderObject rm2("RemindTest2", false, "test2", someday);
+    bro1.append(std::make_shared<ReminderObject>(rm2));
     ReminderObjectList bro2(rm);
 
     rsys.push_back(bro1);
     rsys.push_back(bro2);
+    rsys.printAllRemindObject();
 
-    rsys.saveFile();
-    //rsys.loadFile();
 }
 
-TEST(TestReminderSys_BasicRemindObject, readingFile) {
+
+TEST(TestReminderSys_BasicRemindObject, CheckedListAndPrintProgress) {
     ReminderSystem rsys;
+    Date someday(2024, 2, 3);
+    ReminderObject rm("RemindTest", false, "test", someday);
+    ReminderObjectList bro1(rm);
+    ReminderObject rm2("RemindTest2", false, "test2", someday);
+    ReminderObject rm3("RemindTest2", false, "test2", someday);
+    bro1.append(std::make_shared<ReminderObject>(rm2));
+    bro1.append(std::make_shared<ReminderObject>(rm3));
+    bro1.checkToppestUnchecked();
+    ReminderObjectList bro2(rm);
 
-    rsys.loadFile();
+    rsys.push_back(bro1);
+    rsys.push_back(bro2);
+    rsys.printAllRemindObject();
+
 }
-**/
+
+
+TEST(TestReminderSys_BasicRemindObject, CheckedListAndPrintDONE) {
+    ReminderSystem rsys;
+    Date someday(2024, 2, 3);
+    ReminderObject rm("RemindTest", false, "test", someday);
+    ReminderObjectList bro1(rm);
+    ReminderObject rm2("RemindTest2", false, "test2", someday);
+    ReminderObject rm3("RemindTest2", false, "test2", someday);
+    bro1.append(std::make_shared<ReminderObject>(rm2));
+    bro1.checkToppestUnchecked();
+    bro1.checkToppestUnchecked();
+    ReminderObjectList bro2(rm);
+
+    rsys.push_back(bro1);
+    rsys.push_back(bro2);
+    rsys.printAllRemindObject();
+
+}
 
 /**
 TEST(TestReminderSys_BasicRemindObject, checkedWithNameFailed) {

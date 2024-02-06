@@ -86,7 +86,6 @@ add_executable(ut_all
         ${SRC_FILES}
         ${INCLUDE_FILES}
         ${TEST_FILES}
-        src/main.cpp
 )
 target_link_libraries(ut_all
         GTest::gtest_main

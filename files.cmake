@@ -1,6 +1,6 @@
 set(SRC_FILES
         RemindSystem.cpp
-        BasicRemindObject.cpp
+        ReminderObjectList.cpp
 
 )
 

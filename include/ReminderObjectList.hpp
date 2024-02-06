@@ -17,9 +17,15 @@ private:
     std::string ListName;
     std::vector<std::shared_ptr<ReminderObject>> RList;
 public:
-    ReminderObjectList() : RList() {};
+    ReminderObjectList() : RList(), ListName("DefaultListName") {};
 
-    ReminderObjectList(ReminderObject rm) : RList() { append(std::make_shared<ReminderObject>(rm)); };
+    ReminderObjectList(ReminderObject rm, std::string name) : RList(), ListName(name) {
+        append(std::make_shared<ReminderObject>(rm));
+    };
+
+    ReminderObjectList(ReminderObject rm) : RList(), ListName("DefaultListName") {
+        append(std::make_shared<ReminderObject>(rm));
+    };
 
     ~ReminderObjectList() {};
 
@@ -28,18 +34,23 @@ public:
         RList.push_back(obj);
     };
 
-    void popReminderListByName(std::string name);
+    void popReminderByName(std::string name);
 
     int getReminderListSize() { return RList.size(); };
 
-    std::shared_ptr<ReminderObject> getReminderListByName(std::string name);
+    std::shared_ptr<ReminderObject> getReminderByName(std::string name);
 
-    std::shared_ptr<ReminderObject> getReminderListByIndex(int index) { return RList[index]; };
+    std::shared_ptr<ReminderObject> getReminderByIndex(int index) { return RList[index]; };
 
     std::string getName() { return this->ListName; };
 
     void setName(std::string newName) { this->ListName = newName; };
 
+    void printReminderList();
+
+    int getListCheckedSize();
+
+    void checkToppestUnchecked();
 
 };
 

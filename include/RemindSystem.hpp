@@ -44,6 +44,7 @@ public:
     }
 
     void loadFile() {
+        reminderSys.clear();
         reminderSys = fileMethod.readFromFile("ReminderSys.bin");
     }
 

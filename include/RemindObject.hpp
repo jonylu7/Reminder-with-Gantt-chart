@@ -39,9 +39,9 @@ public:
 
     std::string getReminderObjectCheckedStatus() override {
         if (this->getChecked() == true) {
-            return color.TextWithColorAndBraces("DONE", color.yello);
+            return color.TextWithColorAndBraces("DONE", color::YELLO);
         } else {
-            return color.TextWithColorAndBraces("UNDONE", color.blue);
+            return color.TextWithColorAndBraces("UNDONE", color::BLUE);
         }
     };
 
