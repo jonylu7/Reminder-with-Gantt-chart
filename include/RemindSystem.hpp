@@ -7,35 +7,27 @@
 
 #include <vector>
 #include <memory>
-#include "BasicRemindObject.hpp"
-#include "GanttProject.hpp"
+#include "ReminderObjectList.hpp"
 #include "IsRemindable.hpp"
 #include <iostream>
 #include <stdexcept>
+#include "ReadAndSave.hpp"
 
 class ReminderSystem {
 private:
-    std::vector<std::shared_ptr<IsRemindable>> reminderSys;
+    File fileMethod;
+    std::vector<std::shared_ptr<ReminderObjectList>> reminderSys;
 public:
     ReminderSystem() {};
 
     ~ReminderSystem() {};
 
-    void push_back(std::shared_ptr<IsRemindable> obj) {
-        reminderSys.push_back(obj);
-    };
 
-    void push_back(GanttProject ganttProject) {
-        std::shared_ptr<IsRemindable> obj = std::make_shared<GanttProject>(ganttProject);
-        push_back(obj);
+    void push_back(ReminderObjectList bro) {
+        reminderSys.push_back(std::make_shared<ReminderObjectList>(bro));
     }
 
-    void push_back(BasicRemindObject bro) {
-        std::shared_ptr<IsRemindable> obj = std::make_shared<BasicRemindObject>(bro);
-        push_back(obj);
-    }
-
-    std::shared_ptr<IsRemindable> pop_back();
+    std::shared_ptr<ReminderObjectList> pop_back();
 
     int size() {
         return reminderSys.size();
@@ -47,6 +39,14 @@ public:
 
     void printAllRemindObject();
 
+    void saveFile() {
+        fileMethod.saveToFile(reminderSys, "ReminderSys.bin");
+    }
+
+    void loadFile() {
+        reminderSys.clear();
+        reminderSys = fileMethod.readFromFile("ReminderSys.bin");
+    }
 
 };
 
